@@ -441,7 +441,7 @@ function AppCtrl($scope, $rootScope, $document, $location, utils, globals, model
         if (song.transcodedSuffix !== undefined) { suffix = song.transcodedSuffix; } else { suffix = song.suffix; }
         if (suffix == 'ogg') { suffix = 'oga'; }
         var salt = Math.floor(Math.random() * 100000);
-        url = globals.BaseURL() + '/stream.view?' + globals.BaseParams() + '&id=' + song.id + '&salt=' + salt;
+        url = globals.BaseURL() + '/stream.view?' + globals.BaseParams() + '&id=' + song.id + '&salt=' + salt + '&format=raw';
         return new model.Song(song.id, song.parent, track, song.title, song.artist, song.artistId, song.album, song.albumId, coverartthumb, coverartfull, song.duration, song.userRating, starred, suffix, specs, url, 0, description);
     }
     $scope.addSongToQueue = function (data) {
